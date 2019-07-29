@@ -1,0 +1,5 @@
+input: void
+pipeline:
+- input.dequeue
+#- filters.nonzero
+#- output.http

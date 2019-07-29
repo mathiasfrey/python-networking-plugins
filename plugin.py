@@ -1,12 +1,27 @@
-class SimpleProcess:
-    def process(self, data):
-        print("Hello Simple!")
-        for x in data:
-            yield x * 2
+import random
 
-class AlternativeProcess:
+class VoidInput(object):
     def process(self, data):
-        print("Aloha Alternative")
+        while True:
+            yield None
 
-        for x in data:
-            yield x + .55
+class RandomInputFaker(object):
+    def process(self, data):
+        print("Hello Random!")
+
+        while True:
+            yield random.random()
+
+
+class FibonacciInputFaker(object):
+
+    fib = 1
+
+    def process(self, data):
+        print("Aloha Fibonacci")
+
+        yield FibonacciInputFaker.fib
+        while FibonacciInputFaker.fib < 10000:
+            f = FibonacciInputFaker.fib
+            FibonacciInputFaker.fib = f + f
+            yield f

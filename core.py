@@ -1,9 +1,9 @@
 class InitialProcess(object):
     """Internal business logic"""
     def process(self, data):
-        print("Initial processing")
-        for x in data:
-            yield x + .1
+        print("Initial Setup, e.g. connecting serial inputs")
+        
+        return None
 
 class RadicosApplication(object):
     """First attempt at a plugin system"""
@@ -19,10 +19,14 @@ class RadicosApplication(object):
         
         # The main loop of the program
         # Some people just want to see CPUs burn!
-        data = [1,2,3,-5,8,13]
+        data = None
+
         for module in modules_to_execute:
             data = module.process(data)
 
         print("-" * 79)
         print("Program done")
-        print('Result:', [x for x in data])
+        print('Result:',)
+
+        for x in data:
+            print(x)

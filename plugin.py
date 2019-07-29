@@ -1,9 +1,12 @@
 class SimpleProcess:
     def process(self, data):
         print("Hello Simple!")
-        return data + 11000
+        for x in data:
+            yield x * 2
 
 class AlternativeProcess:
     def process(self, data):
         print("Aloha Alternative")
-        return data + 56
+
+        for x in data:
+            yield x + .55

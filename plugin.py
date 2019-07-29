@@ -16,12 +16,14 @@ class RandomInputFaker(object):
 class FibonacciInputFaker(object):
 
     fib = 1
+    previous = 1
 
     def process(self, data):
         print("Aloha Fibonacci")
 
         yield FibonacciInputFaker.fib
-        while FibonacciInputFaker.fib < 10000:
-            f = FibonacciInputFaker.fib
-            FibonacciInputFaker.fib = f + f
-            yield f
+        while FibonacciInputFaker.fib < 20:
+            yield FibonacciInputFaker.fib
+            f = FibonacciInputFaker.fib + FibonacciInputFaker.previous
+            FibonacciInputFaker.previous = FibonacciInputFaker.fib
+            FibonacciInputFaker.fib = f

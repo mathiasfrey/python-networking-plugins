@@ -1,5 +1,4 @@
 import redis
-import json
 
 class RedisQueue(object):
     """Simple Queue with Redis Backend"""
@@ -37,13 +36,3 @@ class RedisQueue(object):
     def get_nowait(self):
         """Equivalent to get(False)."""
         return self.get(False)
-
-class ExternalProcess(object):
-
-    q = RedisQueue('radicos', host="127.0.0.1", port=6379)
-
-    def process(self, data):
-        
-        for x in data:
-            ExternalProcess.q.put(json.dumps(x))
-            yield x

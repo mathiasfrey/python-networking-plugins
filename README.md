@@ -6,6 +6,16 @@ This project shows a Pythonic version of
 - fast data crunching pipeline
 - process communication using a message queue in Redis
 
+# Roadmap
+
+- define message format
+- handle process orchestration with a tool like Dagster
+- add aggregators, e.g. running mean, max_last_50
+- add gearing, e.g. send packets of n messages to REST
+- add flow/output timing other than incoming cadence
+- lots of logging
+- proper configuration formats
+
 # Install
 
 ```
@@ -28,7 +38,7 @@ python main.py subscriber
 ![terminal](docs/queueing.png "Cool queuing example")
 
 
-# References
+# Stuff to read
 
-https://medium.com/@johngrant/python-redis-pub-sub-6e26b483b3f7
-http://peter-hoffmann.com/2012/python-simple-queue-redis-queue.html
+- https://medium.com/@johngrant/python-redis-pub-sub-6e26b483b3f7
+- http://peter-hoffmann.com/2012/python-simple-queue-redis-queue.html

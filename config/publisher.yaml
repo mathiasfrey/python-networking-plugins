@@ -1,3 +1,4 @@
 input: fibonacci
+# input: random
 pipeline:
-- output.enqueue
+- queue.enqueue

@@ -1,4 +1,5 @@
 import random
+import time
 
 class VoidInput(object):
     def process(self, data):
@@ -22,8 +23,10 @@ class FibonacciInputFaker(object):
         print("Aloha Fibonacci")
 
         yield FibonacciInputFaker.fib
-        while FibonacciInputFaker.fib < 20:
+        while FibonacciInputFaker.fib < 10000:
             yield FibonacciInputFaker.fib
             f = FibonacciInputFaker.fib + FibonacciInputFaker.previous
             FibonacciInputFaker.previous = FibonacciInputFaker.fib
             FibonacciInputFaker.fib = f
+
+            time.sleep(1)

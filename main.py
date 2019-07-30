@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-import core
+import src.core as core
 import yaml
 import importlib
 import argparse
 
-from plugin import RandomInputFaker, FibonacciInputFaker, VoidInput
+from src.plugin import RandomInputFaker, FibonacciInputFaker, VoidInput
 
 if __name__ == "__main__":
 
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     external_modules = []
     for j in pluggable_processes:
-         external_modules.append(importlib.import_module(j))
+         external_modules.append(importlib.import_module('src.' + j))
 
     # Run with plugins, internal and dynamically loaded ones
     app = core.RadicosApplication(plugins=

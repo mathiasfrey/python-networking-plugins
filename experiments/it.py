@@ -22,6 +22,10 @@ def triple(func):
         return output
     return wrapper
 
+def yield_list():
+    l = [[1,2,3,4],[5,6,7,8]]
+    for i in l:
+        yield i
 
 if __name__ == '__main__':
     """Just showcase the magic of iterators"""
@@ -32,6 +36,5 @@ if __name__ == '__main__':
 
     print(list(quadruple(double(range(4)))))
 
-    # functions = (triple,)
-    # for x in range(3):
-    #     print(triple(range(3))())
+    for x in yield_list():
+        print(x)

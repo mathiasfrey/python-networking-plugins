@@ -7,10 +7,14 @@ class VoidInput(object):
             yield None
 
 class RandomInputFaker(object):
+
+    LINES_PER_SECOND = 10
+
     def process(self, data):
         print("Hello Random!")
 
         while True:
+            time.sleep(1 / RandomInputFaker.LINES_PER_SECOND)
             yield random.random()
 
 

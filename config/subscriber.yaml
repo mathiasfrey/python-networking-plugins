@@ -1,7 +1,9 @@
 input: void
 pipeline:
-- queue.dequeue
-#- gearing.packager
+- queue.dequeue_by_clock
+- aggregators.numerical_statistics
+#- queue.dequeue
+- gearing.packager
 #- filters.nonzero
 #- output.http
-- aggregators.numerical_statistics
+#- aggregators.numerical_statistics

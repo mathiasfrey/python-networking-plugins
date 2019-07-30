@@ -1,5 +1,6 @@
 input: void
 pipeline:
 - queue.dequeue
+#- gearing.packager
 #- filters.nonzero
 #- output.http

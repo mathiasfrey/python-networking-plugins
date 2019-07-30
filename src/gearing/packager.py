@@ -12,6 +12,5 @@ class ExternalProcess(object):
             ExternalProcess._list_of_data.append(x)
                    
             if len(ExternalProcess._list_of_data) >= GEARING_SIZE:
-                print('>>>', ExternalProcess._list_of_data)
                 yield ExternalProcess._list_of_data
                 ExternalProcess._list_of_data = []

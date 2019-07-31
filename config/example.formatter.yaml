@@ -1,0 +1,4 @@
+input: fibonacci
+pipeline:
+- aggregators.numerical_statistics
+- formatters.to_dict

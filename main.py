@@ -5,7 +5,7 @@ import yaml
 import importlib
 import argparse
 
-from src.plugin import RandomInputFaker, FibonacciInputFaker, VoidInput
+from src.input.simulators import RandomInputFaker, FibonacciInputFaker, VoidInput
 
 if __name__ == "__main__":
 
@@ -22,8 +22,10 @@ if __name__ == "__main__":
         input_process = FibonacciInputFaker()
     elif CONFIG['input'] == 'random':
         input_process = RandomInputFaker()
-    else:
+    elif CONFIG['input'] == 'void':
         input_process = VoidInput()
+    else:
+        raise Exception('Provide an input channel - at least "input: void"')
 
     pluggable_processes = CONFIG['pipeline']
 

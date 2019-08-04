@@ -16,9 +16,6 @@ if __name__ == "__main__":
     input_process = PipelineConfig.get_input_process()
     pluggable_processes = PipelineConfig.get_pluggable_processes()
 
-    pluggable_processes = []
-    # pluggable_processes = CONFIG['pipeline']
-
     external_modules = []
     for j in pluggable_processes:
          external_modules.append(importlib.import_module('src.' + j))

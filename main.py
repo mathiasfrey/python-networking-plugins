@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 
 import src.core as core
-import yaml
+from src.yaml.parser import PipelineConfig
 import importlib
 import argparse
-
-from src.input.simulators import RandomInputFaker, FibonacciInputFaker, VoidInput
 
 if __name__ == "__main__":
 
@@ -14,20 +12,12 @@ if __name__ == "__main__":
         help='config file name')
     args = parser.parse_args()
 
-    # read config from "console" (file | RPC)
-    with open("config/%s.yaml" % args.cfgFile, 'r') as stream:
-        CONFIG = yaml.safe_load(stream)
+    PipelineConfig.read_config(args.cfgFile)
+    input_process = PipelineConfig.get_input_process()
+    pluggable_processes = PipelineConfig.get_pluggable_processes()
 
-    if CONFIG['input'] == 'fibonacci':
-        input_process = FibonacciInputFaker()
-    elif CONFIG['input'] == 'random':
-        input_process = RandomInputFaker()
-    elif CONFIG['input'] == 'void':
-        input_process = VoidInput()
-    else:
-        raise Exception('Provide an input channel - at least "input: void"')
-
-    pluggable_processes = CONFIG['pipeline']
+    pluggable_processes = []
+    # pluggable_processes = CONFIG['pipeline']
 
     external_modules = []
     for j in pluggable_processes:

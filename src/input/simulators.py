@@ -6,6 +6,15 @@ class VoidInput(object):
         while True:
             yield None
 
+class RangeInputFaker(object):
+
+    def __init__(self, to):
+        self.to = to
+
+    def process(self, data):
+        for x in range(self.to):
+            yield x
+
 class RandomInputFaker(object):
 
     LINES_PER_SECOND = 10

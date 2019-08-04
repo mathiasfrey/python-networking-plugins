@@ -1,0 +1,8 @@
+VERSION: 2 
+
+input:
+  name: range
+  to: 25
+pipeline:
+- aggregators.numerical_statistics
+- formatters.to_dict

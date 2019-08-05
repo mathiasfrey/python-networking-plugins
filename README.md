@@ -10,11 +10,14 @@ This project shows a Pythonic version of
 
 - define message format
 - handle process orchestration with a tool like Dagster
-- add aggregators, e.g. running mean, max_last_50
+- ✅ add aggregators, e.g. running mean, max_last_50
 - add gearing, e.g. send packets of n messages to REST
-- add flow/output timing other than incoming cadence
+- ✅ add flow/output timing other than incoming cadence
 - lots of logging
-- proper configuration formats
+- ✅ proper configuration formats
+- serial emulator: https://stackoverflow.com/questions/2291772/virtual-serial-device-in-python
+- check structure of yaml files
+
 
 # Install
 

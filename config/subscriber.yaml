@@ -1,9 +1,12 @@
 input: void
 pipeline:
-- queue.dequeue_by_clock
-- aggregators.numerical_statistics
+- module: queue.dequeue # queue.dequeue_by_clock
+  queue_name: radicos
+  host: 127.0.0.1
+  port: 6379
+#- aggregators.numerical_statistics
 #- queue.dequeue
-- gearing.packager
+#- gearing.packager
 #- filters.nonzero
 #- output.http
 #- aggregators.numerical_statistics

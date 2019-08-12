@@ -30,16 +30,4 @@ class RadicosApplication(object):
 
         for x in data:
             print(x)
-<<<<<<< HEAD
             #pass
-
-        # for x in data:
-        #     if isinstance(x, list):
-        #         for y in x:
-        #             print(type(y), y)
-        #             for i in y:
-        #                 print(i)
-        #     else:
-        #         print(x)
-=======
->>>>>>> extended_configuration

@@ -1,4 +1,9 @@
 #input: fibonacci
-input: random
+input: 
+  module: range
+  to: 25
 pipeline:
-- queue.enqueue
+- module: queue.enqueue
+  queue_name: radicos
+  host: 127.0.0.1
+  port: 6379

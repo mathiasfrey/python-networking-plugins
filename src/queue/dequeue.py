@@ -3,10 +3,16 @@ from src.queue.rq import RedisQueue
 
 class ExternalProcess(object):
 
-    q = RedisQueue('radicos', host="127.0.0.1", port=6379)
+    def __init__(self, **kwargs):
+
+        self.q = RedisQueue(
+            kwargs['queue_name'],
+            host=kwargs['host'],
+            port=kwargs['port']
+        )
 
     def process(self, data):
         
         while True:
-            x = json.loads(ExternalProcess.q.get())
+            x = json.loads(self.q.get())
             yield x

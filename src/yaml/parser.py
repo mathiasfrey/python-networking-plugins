@@ -26,7 +26,7 @@ class PipelineConfig(object):
             elif CONFIG['input']['module'] == 'void':
                 from src.input.simulators import VoidInput
                 cls.input_process = VoidInput()
-            elif CONFIG['input']['name'] == 'range':
+            elif CONFIG['input']['module'] == 'range':
                 from src.input.simulators import RangeInputFaker
                 cls.input_process = RangeInputFaker(CONFIG['input']['to'])
 

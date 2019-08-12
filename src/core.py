@@ -30,6 +30,7 @@ class RadicosApplication(object):
 
         for x in data:
             print(x)
+<<<<<<< HEAD
             #pass
 
         # for x in data:
@@ -40,3 +41,5 @@ class RadicosApplication(object):
         #                 print(i)
         #     else:
         #         print(x)
+=======
+>>>>>>> extended_configuration

@@ -1,0 +1,5 @@
+input:
+  module: random
+  lines_per_second: None  
+pipeline:
+- queue.enqueue

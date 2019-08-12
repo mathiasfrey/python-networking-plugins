@@ -1,14 +1,14 @@
 from statistics import mean
 from collections import deque
 
-SCOPE = 3
+SCOPE = 1000
 
 class ExternalProcess(object):
 
     _deque_of_data = deque(maxlen=SCOPE)
 
     def process(self, data):
-        print("Simple gearing mechanism")
+        print("Stats on values")
 
         for x in data:
 

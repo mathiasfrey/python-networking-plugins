@@ -30,6 +30,7 @@ class RadicosApplication(object):
 
         for x in data:
             print(x)
+            #pass
 
         # for x in data:
         #     if isinstance(x, list):

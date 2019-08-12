@@ -1,0 +1,6 @@
+input:
+  module: void
+pipeline:
+- queue.dequeue
+- aggregators.numerical_statistics
+- output.speed_test

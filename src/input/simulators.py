@@ -17,13 +17,16 @@ class RangeInputFaker(object):
 
 class RandomInputFaker(object):
 
+    def __init__(self, lines_per_second=10):
+        self.lines_per_second=lines_per_second
+    
     LINES_PER_SECOND = 10
 
     def process(self, data):
         print("Hello Random!")
 
         while True:
-            time.sleep(1 / RandomInputFaker.LINES_PER_SECOND)
+            # time.sleep(1 / RandomInputFaker.LINES_PER_SECOND)
             yield random.random()
 
 

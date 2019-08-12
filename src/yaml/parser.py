@@ -20,10 +20,10 @@ class PipelineConfig(object):
             if CONFIG['input'] == 'fibonacci':
                 from src.input.simulators import FibonacciInputFaker
                 cls.input_process = FibonacciInputFaker()
-            elif CONFIG['input'] == 'random':
+            elif CONFIG['input']['module'] == 'random':
                 from src.input.simulators import RandomInputFaker
                 cls.input_process = RandomInputFaker()
-            elif CONFIG['input'] == 'void':
+            elif CONFIG['input']['module'] == 'void':
                 from src.input.simulators import VoidInput
                 cls.input_process = VoidInput()
             elif CONFIG['input']['name'] == 'range':

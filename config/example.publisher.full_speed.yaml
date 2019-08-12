@@ -1,5 +1,8 @@
 input:
   module: random
-  lines_per_second: None  
+  lines_per_second_limit: None  
 pipeline:
-- queue.enqueue
+- module: queue.enqueue
+  queue_name: radicos
+  host: 127.0.0.1
+  port: 6379

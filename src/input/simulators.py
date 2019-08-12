@@ -8,8 +8,8 @@ class VoidInput(object):
 
 class RangeInputFaker(object):
 
-    def __init__(self, to):
-        self.to = to
+    def __init__(self, **kwargs):
+        self.to = kwargs['to']
 
     def process(self, data):
         for x in range(self.to):
@@ -17,16 +17,22 @@ class RangeInputFaker(object):
 
 class RandomInputFaker(object):
 
-    def __init__(self, lines_per_second=10):
-        self.lines_per_second=lines_per_second
-    
-    LINES_PER_SECOND = 10
+    def __init__(self, **kwargs):
+        
+        try:
+            self.lines_per_second_limit = int(kwargs['lines_per_second_limit'])
+            print("Initialize random with lines per second limit: %d per sec" % self.lines_per_second)
+        except:
+            self.lines_per_second_limit = None
+            print("Go unlimited!")
 
     def process(self, data):
         print("Hello Random!")
 
         while True:
-            # time.sleep(1 / RandomInputFaker.LINES_PER_SECOND)
+            if self.lines_per_second_limit:
+                time.sleep(1 / int(self.lines_per_second_limit))
+
             yield random.random()
 
 

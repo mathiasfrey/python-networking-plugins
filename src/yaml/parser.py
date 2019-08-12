@@ -22,13 +22,13 @@ class PipelineConfig(object):
                 cls.input_process = FibonacciInputFaker()
             elif CONFIG['input']['module'] == 'random':
                 from src.input.simulators import RandomInputFaker
-                cls.input_process = RandomInputFaker()
+                cls.input_process = RandomInputFaker(**CONFIG['input'])
             elif CONFIG['input']['module'] == 'void':
                 from src.input.simulators import VoidInput
                 cls.input_process = VoidInput()
             elif CONFIG['input']['module'] == 'range':
                 from src.input.simulators import RangeInputFaker
-                cls.input_process = RangeInputFaker(CONFIG['input']['to'])
+                cls.input_process = RangeInputFaker(**CONFIG['input'])
 
             else:
                 raise InputNotProvided

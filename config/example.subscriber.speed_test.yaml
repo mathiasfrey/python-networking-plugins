@@ -1,6 +1,11 @@
 input:
   module: void
 pipeline:
-- queue.dequeue
-- aggregators.numerical_statistics
-- output.speed_test
+- module: queue.dequeue
+  queue_name: radicos
+  host: 127.0.0.1
+  port: 6379
+- module: aggregators.numerical_statistics
+  scope: 100
+- module: output.speed_test
+  scope: 1000

@@ -13,6 +13,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # TODO: move all of the below to src.core
+    # this has nothing to do in main.py
 
     PipelineConfig.read_config(args.cfgFile)
     input_process = PipelineConfig.get_input_process()

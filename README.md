@@ -41,6 +41,24 @@ python main.py subscriber
 ![terminal](docs/queueing.png "Cool queuing example")
 
 
+## Profiling
+
+
+Start Redis and a random publisher:
+
+```
+docker-compose up -d
+source venv/bin/activate
+python main.py example.publisher.full_speed
+```
+
+And in a separate terminal a subscriber:
+
+```
+source venv/bin/activate
+python main.py example.subscriber.speed_test
+````
+
 # Stuff to read
 
 - https://medium.com/@johngrant/python-redis-pub-sub-6e26b483b3f7

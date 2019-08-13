@@ -1,8 +1,9 @@
 VERSION: 2 
 
 input:
-  name: range
+  module: range
   to: 25
 pipeline:
-- aggregators.numerical_statistics
-- formatters.to_dict
+- module: aggregators.numerical_statistics
+  scope: 4
+#- module: formatters.to_dict

@@ -1,6 +1,7 @@
 class ExternalProcess(object):
 
-    _list_of_data = []
+    def __init__(self, **kwargs):
+        pass
 
     def process(self, data):
 

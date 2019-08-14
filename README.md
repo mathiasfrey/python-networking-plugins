@@ -27,17 +27,28 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-# Running
+# Running examples
+
+Run all python scripts within a virtual environment:
+```
+source venv/bin/activate
+```
+
+## Simplemost setup
+
+```
+python main.py example.range
+```
+
+## Using Redis as a message queue
 
 ```
 # this starts the Redis service
 docker-compose up -d
 # and the Python publisher
-source venv/bin/activate
 python main.py publisher
 
 # in as many separate terminals as you want
-source venv/bin/activate
 python main.py subscriber
 ```
 ![terminal](docs/queueing.png "Cool queuing example")

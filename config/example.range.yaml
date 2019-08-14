@@ -4,6 +4,6 @@ input:
   module: range
   to: 25
 pipeline:
-- module: aggregators.numerical_statistics
-  scope: 4
-#- module: formatters.to_dict
+#- module: gearing.packager
+#  gearing_size: 5
+- module: output.http

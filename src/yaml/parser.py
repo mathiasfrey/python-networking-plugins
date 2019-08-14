@@ -17,9 +17,9 @@ class PipelineConfig(object):
         with open("config/%s.yaml" % file_name, 'r') as stream:
             CONFIG = yaml.safe_load(stream)
 
-            if CONFIG['input'] == 'fibonacci':
+            if CONFIG['input']['module'] == 'fibonacci':
                 from src.input.simulators import FibonacciInputFaker
-                cls.input_process = FibonacciInputFaker()
+                cls.input_process = FibonacciInputFaker(**CONFIG['input'])
             elif CONFIG['input']['module'] == 'random':
                 from src.input.simulators import RandomInputFaker
                 cls.input_process = RandomInputFaker(**CONFIG['input'])

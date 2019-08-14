@@ -1,7 +1,9 @@
-#input: fibonacci
 input: 
-  module: range
-  to: 25
+  module: fibonacci
+  limit: None
+#input: 
+#  module: range
+#  to: 25
 pipeline:
 - module: queue.enqueue
   queue_name: radicos

@@ -38,17 +38,23 @@ class RandomInputFaker(object):
 
 class FibonacciInputFaker(object):
 
-    fib = 1
-    previous = 1
+    def __init__(self, **kwargs):
+        self.fib = 1
+        self.previous = 1
+
+        try:
+            self.limit = int(kwargs['limit'])
+        except:
+            self.limit = None
 
     def process(self, data):
         print("Aloha Fibonacci")
 
-        yield FibonacciInputFaker.fib
-        while FibonacciInputFaker.fib < 10000:
-            yield FibonacciInputFaker.fib
-            f = FibonacciInputFaker.fib + FibonacciInputFaker.previous
-            FibonacciInputFaker.previous = FibonacciInputFaker.fib
-            FibonacciInputFaker.fib = f
+        yield self.fib
+        while self.limit == None or self.fib < self.limit:
+            yield self.fib
+            f = self.fib + self.previous
+            self.previous = self.fib
+            self.fib = f
 
             time.sleep(1)

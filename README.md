@@ -17,7 +17,7 @@ This project shows a Pythonic version of
 - ✅ proper configuration formats
 - serial emulator: https://stackoverflow.com/questions/2291772/virtual-serial-device-in-python
 - check structure of yaml files
-
+- get rid of `input` concept - it's just the first element in a pipeline
 
 # Install
 
@@ -25,12 +25,14 @@ This project shows a Pythonic version of
 virtualenv --python=/usr/local/bin/python3.7 venv
 source venv/bin/activate
 pip install -r requirements.txt
-docker-compose up -d
 ```
 
 # Running
 
 ```
+# this starts the Redis service
+docker-compose up -d
+# and the Python publisher
 source venv/bin/activate
 python main.py publisher
 
